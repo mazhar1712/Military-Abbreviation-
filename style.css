@@ -1,0 +1,22 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#182117;--card:rgba(35,48,31,.93);--card2:rgba(28,39,25,.96);--text:#f3f2e7;--muted:#c7c9b8;--border:#596447;--olive:#6f7f3f;--olive2:#899a4e;--khaki:#c7b978;--gold:#d6bd62;--red:#b84b3d;--green:#6f9b55;--shadow:0 12px 35px rgba(0,0,0,.35)}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);padding:18px;min-height:100vh;background:linear-gradient(rgba(20,28,18,.78),rgba(20,28,18,.9)),url('./assets/military-ui-concept.png') center/cover fixed;position:relative}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background:radial-gradient(circle at 15% 20%,#9aab62 0 8%,transparent 9%),radial-gradient(circle at 80% 75%,#4d5b31 0 10%,transparent 11%),linear-gradient(135deg,transparent 0 43%,rgba(190,180,110,.12) 44% 55%,transparent 56%);mix-blend-mode:screen}
+.container{max-width:1000px;margin:auto;position:relative;z-index:1}
+.header{background:linear-gradient(135deg,rgba(38,53,30,.97),rgba(16,24,15,.97));border:1px solid #788750;border-left:5px solid var(--gold);color:white;padding:18px;border-radius:16px;margin-bottom:14px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:relative;overflow:hidden}
+.header:after{content:"";position:absolute;right:-45px;top:-55px;width:180px;height:180px;border:22px solid rgba(199,185,120,.12);border-radius:50%;transform:rotate(25deg)}
+.header h1{font-size:28px;letter-spacing:.6px;text-transform:uppercase}.header p{color:var(--khaki);font-size:12px;margin-top:5px;letter-spacing:1px}.header .crest{font-size:34px}
+.toggle-btn{background:var(--khaki);color:#172015;padding:9px 13px;border-radius:9px;border:1px solid #e0d49a;font-weight:800}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:14px;padding:15px;margin-bottom:15px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+.card h2{font-size:19px;color:#e8ddaa;text-transform:uppercase;letter-spacing:.7px;margin-bottom:9px}.instruction{font-size:13px;color:var(--muted);margin-bottom:9px;line-height:1.4}
+textarea{width:100%;min-height:220px;border:1px solid #64734e;outline:none;resize:vertical;font-size:15px;padding:13px;border-radius:10px;background:rgba(11,17,10,.72);color:var(--text);line-height:1.55}textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,189,98,.15)}#outputText{min-height:220px}
+.search-row{display:flex;gap:8px}.search-row input{flex:1}
+input{border:1px solid #64734e;outline:none;border-radius:9px;padding:11px;background:rgba(11,17,10,.72);color:var(--text);font-size:15px}input:focus{border-color:var(--gold)}
+.search-result,.preview-box{margin-top:9px;min-height:48px;border:1px dashed #697652;border-radius:10px;padding:12px;background:rgba(11,17,10,.5);line-height:1.55}.result-box{white-space:pre-wrap}
+.button-group{margin-top:10px;display:flex;gap:7px;flex-wrap:wrap}button{padding:9px 13px;border:0;border-radius:9px;font-size:14px;cursor:pointer;transition:.15s;font-weight:800;letter-spacing:.2px}button:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.abbr-btn{background:var(--olive2);color:#10170d}.deabbr-btn{background:#4f8050;color:#fff}.copy-btn{background:var(--gold);color:#172015}.clear-btn{background:var(--red);color:#fff}.download-btn{background:#526346;color:#fff}.upload-btn{background:#707d51;color:#fff}
+.stats{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}.stat-box{background:rgba(10,16,9,.55);padding:7px 10px;border-radius:9px;font-weight:bold;border:1px solid #586545;font-size:13px}.message{margin-top:8px;color:#b8d98f;font-weight:bold;min-height:20px;font-size:13px}.footer{text-align:center;margin:15px 0 5px;color:#c8c8ad;font-size:12px;letter-spacing:.5px}
+.file-upload{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.file-upload input{flex:1;min-width:220px}
+body.dark{--bg:#10160f}
+@media(max-width:768px){body{padding:7px;background-attachment:scroll}.header{padding:15px}.header h1{font-size:22px}.header .crest{display:none}.card{padding:12px}.search-row{flex-direction:column}button{width:100%}textarea{min-height:205px}.file-upload input{width:100%}}
+.hidden-output-textarea{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}

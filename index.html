@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Military Abbreviation Converter</title>
+
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="crest" aria-hidden="true">✦</div>
+        <div>
+            <h1>Military Abbreviation Converter</h1>
+            <p>According to JSSDM 2022.</p>
+        </div>
+
+        <button type="button" class="toggle-btn" onclick="toggleMode()">Light / Dark Mode</button>
+    </div>
+
+
+    <div class="card">
+        <h2>Abbreviation Search</h2>
+        <div class="search-row">
+            <input type="text" id="abbrSearch" placeholder="Search word or abbreviation..." oninput="searchAbbreviation()">
+            <button type="button" class="copy-btn" onclick="searchAbbreviation()">Search</button>
+        </div>
+        <div class="search-result" id="searchResult">Search result will appear here...</div>
+    </div>
+
+    <div class="card">
+        <h2>Input Text</h2>
+        <div class="instruction">
+            Write <b>full form text</b> or <b>abbreviated text</b> here. Then press the required button.
+        </div>
+
+        <textarea id="inputText" placeholder="Write full form or abbreviated text here..."></textarea>
+
+        <div class="file-upload">
+            <input type="file" id="fileInput" accept=".txt,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <button type="button" class="upload-btn" onclick="loadFileText()">Load TXT / PDF / Scanned PDF / DOCX</button>
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="abbr-btn" onclick="abbreviateText()">Abbreviate</button>
+            <button type="button" class="deabbr-btn" onclick="deabbreviateText()">Deabbreviate</button>
+            <button type="button" class="clear-btn" onclick="clearAll()">Clear All</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">Input Words: <span id="inputWordCount">0</span></div>
+            <div class="stat-box">Changes Made: <span id="changeCount">0</span></div>
+        </div>
+
+        <div class="message" id="msg"></div>
+    </div>
+
+    <div class="card">
+        <h2>Result</h2>
+        <div class="instruction">
+            Converted text will appear here. Changed words will be highlighted here. Click highlighted ambiguous terms to change them instantly.
+        </div>
+
+        <div class="preview-box result-box" id="resultPreview">Result will appear here...</div>
+        <textarea id="outputText" class="hidden-output-textarea" placeholder="Result will appear here..." readonly aria-hidden="true" tabindex="-1"></textarea>
+
+        <div class="button-group">
+            <button type="button" class="copy-btn" onclick="copyResult()">Copy Result</button>
+            <button type="button" class="download-btn" onclick="downloadTxt()">Download TXT</button>
+            <button type="button" class="download-btn" onclick="downloadWord()">Download Word</button>
+            <button type="button" class="download-btn" onclick="downloadPdf()">Download PDF</button>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        Military Abbreviation Converter • JSSDM 2022
+    </div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.2/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
